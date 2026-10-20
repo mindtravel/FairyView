@@ -1,0 +1,24 @@
+# Conversational dataset: SFT mixtures, chat exports, agent traces.
+# Shows the rendered conversation; assistant content is marked as loss spans.
+title = "Chat dataset review"
+data_key = "chat-dataset"
+description = "Spot-check conversations: role order, empty turns, template artifacts."
+panel_layout = "stacked"
+blinded_default = false
+facets = ["source"]
+
+caveats = [
+  "Sampled rows, not a full-population statistic.",
+  "Rendering uses a generic role header, not your final chat template; spans are character ranges, not token ids.",
+]
+
+[sample]
+n = 200
+seed = 0
+stratify = "source"
+
+[source]
+kind = "chat_rows"
+path = "CHANGE_ME"
+glob = "**/*.parquet"
+facets = ["source"]

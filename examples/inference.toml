@@ -1,0 +1,17 @@
+title = "Inference review"
+data_key = "inference-demo"
+description = "Compare model outputs without a gold answer."
+panel_layout = "side_by_side"
+blinded_default = false
+max_inline_records = 500
+facets = ["split"]
+
+[sample]
+n = 200
+seed = 0
+
+[source]
+kind = "inference_rows"
+path = "inference_demo.jsonl"
+glob = "**/*.jsonl"
+id_field = "id"

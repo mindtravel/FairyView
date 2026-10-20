@@ -1,0 +1,18 @@
+title = "Benchmark review: GSM8K demo"
+data_key = "benchmark-demo"
+description = "One prompt, the reference answer, and every model's response side by side."
+panel_layout = "stacked"
+blinded_default = false
+max_inline_records = 500
+facets = []
+
+caveats = [
+  "Three hand-written demo rows, not a benchmark result.",
+  "Scores are shown on a 0-1 scale and are not calibrated across models.",
+]
+
+[source]
+kind = "benchmark_rows"
+path = "benchmark_demo.jsonl"
+glob = "**/*.jsonl"
+id_field = "id"

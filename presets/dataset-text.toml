@@ -1,0 +1,20 @@
+# Plain-text corpus: pretraining or midtraining documents.
+title = "Text dataset review"
+data_key = "text-dataset"
+description = "Spot-check documents for boilerplate, truncation, encoding and duplicates."
+panel_layout = "stacked"
+blinded_default = false
+facets = []
+
+caveats = [
+  "Sampled rows, not a full-population statistic.",
+]
+
+[sample]
+n = 200
+seed = 0
+
+[source]
+kind = "auto"
+path = "CHANGE_ME"
+glob = "**/*.parquet"

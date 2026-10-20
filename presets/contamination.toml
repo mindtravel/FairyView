@@ -1,0 +1,34 @@
+# Contamination audit: a document next to the eval text it overlaps.
+# Emit `match` spans from your adapter to highlight the shared n-grams.
+title = "Contamination review"
+data_key = "contamination"
+description = "Check flagged documents against the benchmark text they matched."
+panel_layout = "side_by_side"
+blinded_default = false
+facets = ["benchmark"]
+
+caveats = [
+  "A match is a candidate, not proof of contamination; inspect the highlighted span.",
+]
+
+[sample]
+n = 200
+seed = 0
+stratify = "benchmark"
+
+[source]
+kind = "paired"
+join_field = "doc_id"
+facets = ["benchmark"]
+
+[left]
+path = "CHANGE_ME/documents"
+glob = "**/*.parquet"
+text_field = "text"
+label = "document"
+
+[right]
+path = "CHANGE_ME/matches"
+glob = "**/*.parquet"
+text_field = "eval_text"
+label = "matched eval text"

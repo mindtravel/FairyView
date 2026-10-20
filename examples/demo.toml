@@ -1,0 +1,16 @@
+title = "DataReview demo"
+data_key = "demo"
+description = "Synthetic records shipped with the repository, so a fresh clone renders a page with one command."
+panel_layout = "stacked"
+blinded_default = false
+max_inline_records = 500
+facets = ["dataset", "kept"]
+
+caveats = [
+  "These are synthetic rows, not real data.",
+  "Assistant content is marked with character spans, not token ids.",
+]
+
+[source]
+kind = "./synthetic_demo.py:make_records"
+path = "unused"

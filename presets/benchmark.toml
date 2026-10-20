@@ -1,0 +1,24 @@
+# Benchmark review: one prompt, a reference answer, every model's response.
+title = "Benchmark review"
+data_key = "benchmark"
+description = "Read the question, the reference, and each model answer together."
+panel_layout = "stacked"
+blinded_default = true
+facets = ["split"]
+
+caveats = [
+  "Sampled items, not the full benchmark score.",
+  "Scores come from the source export and may use different scales.",
+]
+
+[sample]
+n = 200
+seed = 0
+stratify = "split"
+
+[source]
+kind = "benchmark_rows"
+path = "CHANGE_ME"
+glob = "**/*.parquet"
+id_field = "id"
+facets = ["split"]

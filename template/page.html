@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{TITLE}}</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <p class="small"><span id="meta"></span>
+      <select id="lang" aria-label="language">
+        <option value="en">English</option>
+        <option value="zh">中文</option>
+      </select>
+    </p>
+    <h1>{{TITLE}}</h1>
+    <p id="description"></p>
+    <p id="provenance" class="small" hidden></p>
+    <section id="caveats" class="warning" hidden></section>
+  </header>
+
+  <!-- Visible text carries data-i18n keys; app.js fills it from I18N. -->
+  <div class="controls">
+    <label><span data-i18n="search">Search</span> <input id="search" type="search" data-i18n-placeholder="search_hint"></label>
+    <span id="facets" class="facets"></span>
+    <label><span data-i18n="view">View</span>
+      <select id="view">
+        <option value="cards" data-i18n="cards">Cards</option>
+        <option value="table" data-i18n="table">Table</option>
+      </select>
+    </label>
+    <label><span data-i18n="layout">Panel layout</span>
+      <select id="layout">
+        <option value="side_by_side" data-i18n="side_by_side">Side by side</option>
+        <option value="stacked" data-i18n="stacked">Stacked</option>
+        <option value="toggle" data-i18n="toggle">Toggle</option>
+      </select>
+    </label>
+    <button id="blind" type="button"></button>
+    <span id="count" class="small"></span>
+  </div>
+
+  <section id="records"></section>
+  <p style="text-align:center"><button id="more" type="button" hidden></button></p>
+
+  <footer>
+    <p class="small">
+      <span data-i18n="storage_note">Decisions are kept in this browser's localStorage; export them as JSONL below.</span>
+      <button id="export" type="button" data-i18n="export">Export decisions.jsonl</button>
+      <button id="clear" type="button" data-i18n="clear">Clear decisions on this page</button>
+    </p>
+  </footer>
+</main>
+
+<script src="config.js"></script>
+<!-- data scripts injected by build.py: records.js or shard_index.js + shards/* -->
+{{DATA_SCRIPTS}}
+<script src="app.js"></script>
+</body>
+</html>

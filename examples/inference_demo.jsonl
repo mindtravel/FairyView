@@ -1,0 +1,5 @@
+{"id": "chat/0000", "split": "smoke", "prompt": "用户：解释什么是第 0 个概念\n", "model_outputs": {"qwen3-4b": "模型 A 的回答 0", "llama3-8b": "模型 B 的回答 0"}}
+{"id": "chat/0001", "split": "smoke", "prompt": "用户：解释什么是第 1 个概念\n", "model_outputs": {"qwen3-4b": "模型 A 的回答 1", "llama3-8b": "模型 B 的回答 1"}}
+{"id": "chat/0002", "split": "smoke", "prompt": "用户：解释什么是第 2 个概念\n", "model_outputs": {"qwen3-4b": "模型 A 的回答 2", "llama3-8b": "模型 B 的回答 2"}}
+{"id": "chat/0003", "split": "smoke", "prompt": "用户：解释什么是第 3 个概念\n", "model_outputs": {"qwen3-4b": "模型 A 的回答 3", "llama3-8b": "模型 B 的回答 3"}}
+{"id": "chat/0004", "split": "smoke", "prompt": "用户：解释什么是第 4 个概念\n", "model_outputs": {"qwen3-4b": "模型 A 的回答 4", "llama3-8b": "模型 B 的回答 4"}}

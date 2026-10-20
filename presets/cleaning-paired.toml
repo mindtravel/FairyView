@@ -1,0 +1,33 @@
+# Cleaning / filtering: show each row before and after, plus why it was kept or dropped.
+title = "Cleaning review"
+data_key = "cleaning"
+description = "Compare input and output of a cleaning step; check that drops are justified."
+panel_layout = "side_by_side"
+blinded_default = false
+facets = []
+
+caveats = [
+  "Sampled pairs only; counts in this page are not the pipeline's full counters.",
+]
+
+[sample]
+n = 200
+seed = 0
+
+[left]
+path = "CHANGE_ME/raw"
+glob = "**/*.parquet"
+text_field = "text"
+label = "before"
+
+[right]
+path = "CHANGE_ME/cleaned"
+glob = "**/*.parquet"
+text_field = "text"
+label = "after"
+reason_field = "filter_reason"
+
+[source]
+kind = "paired"
+join_field = "id"
+facets = []

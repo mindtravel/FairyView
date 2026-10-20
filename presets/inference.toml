@@ -1,0 +1,23 @@
+# Inference comparison: same prompts, several models, no gold answer.
+title = "Inference review"
+data_key = "inference"
+description = "Compare model outputs on the same prompts."
+panel_layout = "side_by_side"
+blinded_default = false
+facets = ["split"]
+
+caveats = [
+  "Sampled prompts only; no automatic correctness judgement is made.",
+]
+
+[sample]
+n = 200
+seed = 0
+stratify = "split"
+
+[source]
+kind = "inference_rows"
+path = "CHANGE_ME"
+glob = "**/*.parquet"
+id_field = "id"
+facets = ["split"]

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fairyview"
+version = "0.1.0"
+description = "Configurable, self-contained HTML pages for reviewing datasets, cleaning outputs and model scores."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [{ name = "FairyView contributors" }]
+keywords = ["dataset", "review", "html", "data-cleaning", "annotation"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: Apache Software License",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.optional-dependencies]
+parquet = ["pyarrow>=14"]
+test = ["pytest>=8"]
+
+[project.scripts]
+fairyview = "fairyview.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/mindtravel/FairyView"
+Issues = "https://github.com/mindtravel/FairyView/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["fairyview"]
+# The renderer ships inside the wheel; build.py reads it from here.
+force-include = { "template" = "fairyview/_template", "presets" = "fairyview/_presets" }
